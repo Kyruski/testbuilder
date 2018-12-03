@@ -141,12 +141,63 @@ describe('MasterCard', function() {
 describe('Discover', function() {
   // Tests without a function will be marked as "pending" and not run
   // Implement these tests (and others) and make them pass!
-  it('has a prefix of 6011 and a length of 16');
-  it('has a prefix of 6011 and a length of 19');
+  var should = chai.should();
+
+  it('has a prefix of 6011 and a length of 16', function() {
+    detectNetwork('6011111111111111').should.equal('Discover');
+  });
+  it('has a prefix of 6011 and a length of 19', function() {
+    detectNetwork('6011111111111111111').should.equal('Discover');
+  });
+  it('has a prefix of 644 and a length of 16', function() {
+    detectNetwork('6444444444444444').should.equal('Discover');
+  });
+  it('has a prefix of 644 and a length of 19', function() {
+    detectNetwork('6444444444444444444').should.equal('Discover');
+  });
+  it('has a prefix of 645 and a length of 16', function() {
+    detectNetwork('6454444444444444').should.equal('Discover');
+  });
+  it('has a prefix of 645 and a length of 19', function() {
+    detectNetwork('6454444444444444444').should.equal('Discover');
+  });
+  it('has a prefix of 646 and a length of 16', function() {
+    detectNetwork('6464444444444444').should.equal('Discover');
+  });
+  it('has a prefix of 646 and a length of 19', function() {
+    detectNetwork('6464444444444444444').should.equal('Discover');
+  });  
+  it('has a prefix of 647 and a length of 16', function() {
+    detectNetwork('6474444444444444').should.equal('Discover');
+  });
+  it('has a prefix of 647 and a length of 19', function() {
+    detectNetwork('6474444444444444444').should.equal('Discover');
+  });
+  it('has a prefix of 648 and a length of 16', function() {
+    detectNetwork('6484444444444444').should.equal('Discover');
+  });
+  it('has a prefix of 648 and a length of 19', function() {
+    detectNetwork('6484444444444444444').should.equal('Discover');
+  });
+  it('has a prefix of 649 and a length of 16', function() {
+    detectNetwork('6494444444444444').should.equal('Discover');
+  });
+  it('has a prefix of 649 and a length of 19', function() {
+    detectNetwork('6494444444444444444').should.equal('Discover');
+  });
+  it('has a prefix of 65 and a length of 16', function() {
+    detectNetwork('6504444444444444').should.equal('Discover');
+  });
+  it('has a prefix of 65 and a length of 19', function() {
+    detectNetwork('6504444444444444444').should.equal('Discover');
+  });  
 });
 
 describe('Maestro', function() {
   // Write full test coverage for the Maestro card
+  var should = chai.should();
+
+  it('has ')
 });
 
 describe('should support China UnionPay')
