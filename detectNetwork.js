@@ -12,7 +12,7 @@ var detectNetwork = function(cardNumber) {
   const prefixOneDigit = cardNumber.slice(0, 1);
   const prefixTwoDigit = cardNumber.slice(0, 2);
   if ((prefixTwoDigit === '38' || prefixTwoDigit === '39') && length === 14) {
-    return "Diner's Club";
+    return 'Diner\'s Club';
   } else if ((prefixTwoDigit === '34' || prefixTwoDigit === '37') && length === 15) {
     return 'American Express';
   } else if (prefixOneDigit === '4' && (length === 13 || length === 16 || length === 19)){
