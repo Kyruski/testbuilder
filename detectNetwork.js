@@ -9,11 +9,16 @@
 
 var detectNetwork = function(cardNumber) {
   const length = cardNumber.length;
-  const prefix = cardNumber.slice(0, 2);
-  if ((prefix === '38' || prefix === '39') && length === 14) {
+  const prefixOneDigit = cardNumber.slice(0, 1);
+  const prefixTwoDigit = cardNumber.slice(0, 2);
+  if ((prefixTwoDigit === '38' || prefixTwoDigit === '39') && length === 14) {
     return "Diner's Club";
-  } else if ((prefix === '34' || prefix === '37') && length === 15) {
+  } else if ((prefixTwoDigit === '34' || prefixTwoDigit === '37') && length === 15) {
     return 'American Express';
+  } else if (prefixOneDigit === '4' && (length === 13 || length === 16 || length === 19)){
+    return 'Visa';
+  } else if ((prefixTwoDigit === '51' || prefixTwoDigit === '52' || prefixTwoDigit === '53' || prefixTwoDigit === '54' || prefixTwoDigit === '55') && length === 16) {
+    return 'MasterCard';
   } else {
     return '';
   }
