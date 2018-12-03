@@ -18,6 +18,8 @@ var detectNetwork = function(cardNumber) {
     return 'Diner\'s Club';
   } else if ((prefixTwoDigit === '34' || prefixTwoDigit === '37') && length === 15) {
     return 'American Express';
+  } else if ((prefixFourDigit === '4903' || prefixFourDigit === '4905' || prefixFourDigit === '4911' || prefixFourDigit === '4936' || prefixSixDigit === '564182' || prefixSixDigit === '633110' || prefixFourDigit === '6333' || prefixFourDigit === '6759') && ( length === 16 || length === 18 || length === 19)) {
+    return 'Switch';
   } else if (prefixOneDigit === '4' && (length === 13 || length === 16 || length === 19)){
     return 'Visa';
   } else if ((Number(prefixTwoDigit) >= 51 && Number(prefixTwoDigit) <= 55 ) && length === 16) {
@@ -28,8 +30,6 @@ var detectNetwork = function(cardNumber) {
     return 'Maestro';
   } else if (((Number(prefixSixDigit) >= 622126 && Number(prefixSixDigit) <= 622925) || (Number(prefixThreeDigit) >= 624 && Number(prefixThreeDigit) <= 626) || (Number(prefixFourDigit) >= 6282 && Number(prefixFourDigit) <= 6288)) && (length >= 16 && length <= 19)){
     return 'China UnionPay';
-  } else if ((prefixFourDigit === '4903' || prefixFourDigit === '4905' || prefixFourDigit === '4936' || prefixSixDigit === '564182' || prefixSixDigit === '633110' || prefixFourDigit === '6333' || prefixFourDigit === '6759') && ( length === 16 || length === 18 || length === 19)) {
-    return 'Switch';
   } else {
     return '';
   }
