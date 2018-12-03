@@ -308,7 +308,9 @@ describe('China UnionPay', function(){
         isTrue = false;
       }
     }
-    it('has a prefix between 622126 and 622925, and a length between 16 and 19'), isTrue.should.equal(true);
+    it('has a prefix between 622126 and 622925, and a length between 16 and 19', function() {
+      isTrue.should.equal(true);
+    });
   })();
 
   (function() {
@@ -327,7 +329,9 @@ describe('China UnionPay', function(){
         isTrue = false;
       }
     }
-    it('has a prefix between 624 and 626, and a length between 16 and 19'), isTrue.should.equal(true);
+    it('has a prefix between 624 and 626, and a length between 16 and 19', function() {
+      isTrue.should.equal(true);
+    });
   })();
 
   (function() {
@@ -346,7 +350,9 @@ describe('China UnionPay', function(){
         isTrue = false;
       }
     }
-    it('has a prefix between 6282 and 6288, and a length between 16 and 19'), isTrue.should.equal(true);
+    it('has a prefix between 6282 and 6288, and a length between 16 and 19', function() {
+      isTrue.should.equal(true);
+    });
   })();
 });
 describe('should support Switch', function() {
