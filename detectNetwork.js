@@ -13,6 +13,7 @@ var detectNetwork = function(cardNumber) {
   const prefixTwoDigit = cardNumber.slice(0, 2);
   const prefixThreeDigit = cardNumber.slice(0, 3);
   const prefixFourDigit = cardNumber.slice(0, 4);
+  const prefixSixDigit = cardNumber.slice(0,6);
   if ((prefixTwoDigit === '38' || prefixTwoDigit === '39') && length === 14) {
     return 'Diner\'s Club';
   } else if ((prefixTwoDigit === '34' || prefixTwoDigit === '37') && length === 15) {
@@ -25,6 +26,8 @@ var detectNetwork = function(cardNumber) {
     return 'Discover';
   } else if ((prefixFourDigit === '5018' || prefixFourDigit === '5020' || prefixFourDigit === '5038' || prefixFourDigit === '6304') && (length >= 12 && length <= 19)) {
     return 'Maestro';
+  } else if (((Number(prefixSixDigit) >= 622126 && Number(prefixSixDigit) <= 622925) || (Number(prefixThreeDigit) >= 624 && Number(prefixThreeDigit) <= 626) || (Number(prefixFourDigit) >= 6282 && Number(prefixFourDigit) <= 6288)) && (length >= 16 && length <= 19)){
+    return 'China UnionPay';
   } else {
     return '';
   }
