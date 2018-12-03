@@ -11,11 +11,11 @@ var detectNetwork = function(cardNumber) {
   const length = cardNumber.length;
   const prefix = cardNumber.slice(0, 2);
   if ((prefix === '38' || prefix === '39') && length === 14) {
-    return 'The Diner\'s Club';
+    return "Diner's Club";
   } else if ((prefix === '34' || prefix === '37') && length === 15) {
     return 'American Express';
   } else {
-    return 'Not a valid card';
+    return '';
   }
 
   
